@@ -9,15 +9,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="@color/lightGray"
         android:layout_height="match_parent"
         tools:context=".FavoriteFragment">
 
         <!-- TODO: Update blank fragment layout -->
         <TextView
+            android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginStart="176dp"
+            android:layout_marginTop="292dp"
             android:text="Favorite"
             android:textColor="@color/black"
             android:textStyle="bold"
