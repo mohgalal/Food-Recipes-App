@@ -62,6 +62,6 @@ dependencies {
 
     //Shimmer Recyclerview
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
-    //implementation 'com.todkars:shimmer-recyclerview:0.4.1'
+   // implementation 'com.todkars:shimmer-recyclerview:0.4.1'
 
 }
