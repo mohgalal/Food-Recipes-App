@@ -1,4 +1,4 @@
-package com.example.foodapp
+package com.example.foodapp.ui.fragments.favorites
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import com.example.foodapp.R
 import com.example.foodapp.databinding.FragmentFavoriteBinding
 
 class FavoriteFragment : Fragment() {
