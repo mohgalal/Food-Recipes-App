@@ -1,4 +1,4 @@
-package com.example.foodapp
+package com.example.foodapp.ui.fragments.recipes
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.example.foodapp.databinding.FragmentFoodJokeBinding
+import com.example.foodapp.R
+import com.example.foodapp.databinding.FragmentRecipesBinding
+
+class RecipesFragment : Fragment() {
 
 
-class FoodJokeFragment : Fragment() {
-
-
-    private lateinit var binding : FragmentFoodJokeBinding
+    private lateinit var binding : FragmentRecipesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -23,9 +23,14 @@ class FoodJokeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_food_joke, container, false)
+
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_recipes, container, false)
+
+        binding.recyclerview.startShimmer()
 
         return binding.root
+
     }
+
 
 }
