@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recpies_row"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="4dp">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/row_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/lightMediumGray"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/recipes_imageview"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="12dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/courgette"
+                android:text="TextView"
+                android:maxLines="2"
+                android:textColor="@color/darker"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/recipes_imageview"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/description_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="Open the AndroidManifest file. click on Merged Manifest tab (in the bottom of the IDE).
+Search for Activity having LAUNCHER intent-filter.
+If there is any LAUNCHER Activity other than yours, that is the culprit.
+You can modify or update your library AndroidManifest file and remove the activity from th"
+                android:textColor="@color/darkGray"
+                app:layout_constraintEnd_toEndOf="@+id/title_tv"
+                app:layout_constraintStart_toStartOf="@+id/title_tv"
+                app:layout_constraintTop_toBottomOf="@+id/title_tv" />
+
+            <ImageView
+                android:id="@+id/heart_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:tint="@color/red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="36dp"
+                app:layout_constraintEnd_toEndOf="@+id/heart_tv"
+                app:layout_constraintStart_toStartOf="@+id/heart_tv"
+                app:layout_constraintTop_toBottomOf="@+id/description_tv"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_heart" />
+
+            <TextView
+                android:id="@+id/heart_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                app:layout_constraintStart_toStartOf="@+id/description_tv"
+                app:layout_constraintTop_toBottomOf="@+id/heart_iv" />
+
+            <ImageView
+                android:id="@+id/clock_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tint="@color/yellow"
+                app:layout_constraintEnd_toEndOf="@+id/clock_tv"
+                app:layout_constraintStart_toStartOf="@+id/clock_tv"
+                app:layout_constraintTop_toTopOf="@+id/heart_iv"
+                app:srcCompat="@drawable/ic_time" />
+
+            <TextView
+                android:id="@+id/clock_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="100"
+                android:textColor="@color/yellow"
+                app:layout_constraintStart_toEndOf="@+id/heart_tv"
+                app:layout_constraintTop_toBottomOf="@+id/clock_iv" />
+
+            <ImageView
+                android:id="@+id/leaf_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/leaf_tv"
+                app:layout_constraintStart_toStartOf="@+id/leaf_tv"
+                app:layout_constraintTop_toTopOf="@+id/clock_iv"
+                app:srcCompat="@drawable/ic_leaf" />
+
+            <TextView
+                android:id="@+id/leaf_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="1dp"
+                android:text="100"
+                app:layout_constraintStart_toEndOf="@+id/clock_tv"
+                app:layout_constraintTop_toBottomOf="@+id/leaf_iv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
