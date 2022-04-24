@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import coil.load
 import com.example.foodapp.R
 
 class RecipesRowBinding {
@@ -12,6 +13,15 @@ class RecipesRowBinding {
 
     // here I did CustomAttributes for my views
     companion object {
+
+        @BindingAdapter("downloadImageFromUrl")
+        @JvmStatic
+        fun downloadImageFromUrl(imageView: ImageView, url:String){
+
+            imageView.load(url){
+                crossfade(600)
+            }
+        }
 
         @BindingAdapter("setNumberOfLikes")
         @JvmStatic

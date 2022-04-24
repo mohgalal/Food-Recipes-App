@@ -5,7 +5,7 @@ import com.example.foodapp.data.network.FoodRecipesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -14,7 +14,7 @@ import javax.inject.Singleton
 
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 object NetworkModule {
 
     // If I use dagger with external library I will use @Module & @Provides
