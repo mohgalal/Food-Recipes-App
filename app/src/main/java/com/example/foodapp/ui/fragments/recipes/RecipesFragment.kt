@@ -9,25 +9,29 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.foodapp.MainViewModel
+import com.example.foodapp.viewmodels.MainViewModel
 import com.example.foodapp.R
 import com.example.foodapp.adapters.RecipesAdapter
 import com.example.foodapp.databinding.FragmentRecipesBinding
 import com.example.foodapp.util.Constants.Companion.API_KEY
 import com.example.foodapp.util.NetworkResult
+import com.example.foodapp.viewmodels.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+// means  This class will take care of injecting members into the Android class
 @AndroidEntryPoint
 class RecipesFragment : Fragment() {
 
     private lateinit var mainViewModel: MainViewModel
+    private lateinit var recipeViewModel: RecipesViewModel
     private val mAdapter by lazy { RecipesAdapter()}
 
     private lateinit var binding : FragmentRecipesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java) //reflection
+        recipeViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -46,7 +50,7 @@ class RecipesFragment : Fragment() {
     }
 
     private fun requestApiData(){
-        mainViewModel.getRecipe(applyQuery())
+        mainViewModel.getRecipe(recipeViewModel.applyQuery())
         mainViewModel.recipesResponse.observe(viewLifecycleOwner) { respones ->
             when (respones) {
                 is NetworkResult.Success -> {
@@ -66,20 +70,6 @@ class RecipesFragment : Fragment() {
                 }
             }
         }
-    }
-
-
-    private fun applyQuery(): HashMap<String, String>{
-        val query : HashMap<String, String> = HashMap()
-
-        query["number"] = "50"
-        query["apiKey"] = API_KEY
-        query["type"] = "snack"
-        query["diet"] = "vegan"
-        query["addRecipeInformation"] = "true"
-        query["fillIngredients"] = "true"
-
-        return query
     }
 
     private fun setupRecyclerView() {
