@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
 @Database(
-    entities = [RecipesEntity::class], version = 1, exportSchema = false
+    entities = [RecipesEntity::class], version = 2, exportSchema = false
 )
 @TypeConverters(RecpiesTypeConvertor::class)
 abstract class RecipesDatabase : RoomDatabase() {

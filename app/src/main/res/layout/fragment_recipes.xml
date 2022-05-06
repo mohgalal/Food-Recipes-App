@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.example.foodapp.viewmodels.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -60,6 +63,8 @@
 
         <ImageView
             android:id="@+id/error_imageview"
+            readApiResponse = "@{viewModel.recipesResponse}"
+            readDatabase = "@{viewModel.readRecipes}"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="150dp"
@@ -72,6 +77,8 @@
 
         <TextView
             android:id="@+id/error_textview"
+            readApiResponse = "@{viewModel.recipesResponse}"
+            readDatabase = "@{viewModel.readRecipes}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

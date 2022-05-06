@@ -7,11 +7,12 @@ import com.example.foodapp.util.Constants.Companion.RECIPES_TABLE
 
 @Entity(tableName = RECIPES_TABLE)
 class RecipesEntity(
-    foodRecipes: FoodRecipes
+    var foodRecipes: FoodRecipes
 ) {
     // Here I said that if fetch new data replace the old data, without move the cursor and keep the old data
     @PrimaryKey(autoGenerate = false)
     var id : Int = 0
+
 
 
 }
