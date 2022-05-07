@@ -3,11 +3,21 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+   // id 'androidx.navigation.safeargs.kotlin'
 }
+
 
 android {
     compileSdk 32
 
+    buildscript {
+        repositories {
+            google()
+        }
+        dependencies {
+            classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.4.2")
+        }
+    }
     defaultConfig {
         applicationId "com.example.foodapp"
         minSdk 23
@@ -89,5 +99,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
 
     // DataStore
+   // implementation "androidx.datastore:datastore-preferences:1.0.0"
     implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:2.5.0-beta01"
 }

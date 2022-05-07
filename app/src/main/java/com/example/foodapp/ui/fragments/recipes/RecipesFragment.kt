@@ -48,6 +48,7 @@ class RecipesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
+
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_recipes, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = mainViewModel
