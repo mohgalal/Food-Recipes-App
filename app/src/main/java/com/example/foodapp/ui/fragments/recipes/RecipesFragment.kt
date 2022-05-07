@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodapp.viewmodels.MainViewModel
 import com.example.foodapp.R
@@ -54,6 +55,10 @@ class RecipesFragment : Fragment() {
         setupRecyclerView()
         readDatabase()
 
+        binding.recipesFab.setOnClickListener {
+            findNavController().navigate(R.id.action_recipesFragment_to_bottomSheetFragment)
+        }
+
         return binding.root
 
     }
@@ -86,10 +91,10 @@ class RecipesFragment : Fragment() {
             when (respones) {
                 is NetworkResult.Success -> {
                     hideShimmerEffect()
-                    respones.data.let {
-                        if (it != null) {
+                    respones.data?.let {
+
                             mAdapter.setData(it)
-                        }
+
                     }
 
                 }
@@ -113,6 +118,7 @@ class RecipesFragment : Fragment() {
                 if (database.isNotEmpty()){
                     mAdapter.setData(database[0].foodRecipes)
                 }
+
             }
         }
 
